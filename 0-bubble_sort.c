@@ -6,7 +6,7 @@
  * @array: list to sort
  * @size: lenght of list
  *
- * Return: array sorted in ascending order
+ * Return: nothing
  */
 
 void bubble_sort(int *array, size_t size)
