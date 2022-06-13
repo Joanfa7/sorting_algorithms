@@ -20,7 +20,7 @@ void insertion_sort_list(listint_t **list)
 
 		while (PrevPtr != NULL && NextPtr->n < PrevPtr->n)
 		{
-			swap(list, &PrevPtr, NextPtr);
+			swaping(list, &PrevPtr, NextPtr);
 			print_list((const listint_t *)*list);
 		}
 	}
