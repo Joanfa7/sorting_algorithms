@@ -29,7 +29,7 @@ void selection_sort(int *array, size_t size);
 
 void insertion_sort_list(listint_t **list);
 
-void swap(listint_t **head, listint_t **left, listint_t *right);
+void swaping(listint_t **head, listint_t **left, listint_t *right);
 
 void quick_sort(int *array, size_t size);
 
