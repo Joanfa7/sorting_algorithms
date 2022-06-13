@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list- sorts a dobly linked list of integers in ascending order
+ * insertion_sort_list- sorts a linked list of integers in ascending order
  * @list: list to be sorted
  * Return: success
  */
@@ -26,7 +26,15 @@ void insertion_sort_list(listint_t **list)
 	}
 }
 
-void swap(listint_t **head, listint_t **left, listint_t *right)
+/**
+ * swaping- swaps the order of nodes
+ * @head: first node of the list
+ * @right: node to change
+ * @left: node to evalueate
+ * Return: success
+ */
+
+void swaping(listint_t **head, listint_t **left, listint_t *right)
 {
 	(*left)->next = right->next;
 	if (right->next != NULL)
