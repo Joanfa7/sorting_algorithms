@@ -59,7 +59,7 @@ void cocktail_sort_list(listint_t **list)
 
 	if (list == NULL)
 		return;
-	for (size = 0; node->next != NULL; size++)
+	for (size = 0; node != NULL; size++)
 		node = node->next;
 	if (size < 2)
 		return;
@@ -67,7 +67,7 @@ void cocktail_sort_list(listint_t **list)
 	while (con > 0)
 	{
 		con = -1;
-		for (i = start; i < size; i++)
+		for (i = start; i < size && node->next != NULL; i++)
 		{
 			if (node->n > node->next->n)
 			{
@@ -79,7 +79,7 @@ void cocktail_sort_list(listint_t **list)
 		}
 		node = node->prev;
 		size--;
-		for (i = size; i > start; i--)
+		for (i = size; i > start && node->prev != NULL; i--)
 		{
 			if (node->n < node->prev->n)
 			{
