@@ -1,7 +1,7 @@
 #include "sort.h"
 #include <stdio.h>
 
-void sw(listint_t *first, listint_t *sec)
+void sw(listint_t **h, listint_t *first, listint_t *sec)
 {
 	if (first->prev != NULL)
 	{
@@ -26,6 +26,11 @@ void sw(listint_t *first, listint_t *sec)
 	}
 
 	sec->next = first;
+
+	if (sec->prev == NULL)
+	{
+		(*h) = sec;
+	}
 }
 
 /*
@@ -66,34 +71,29 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (node->n > node->next->n)
 			{
-				sw(node, node->next);
+				sw(list, node, node->next);
 				node = node->prev;
 				print_list((const listint_t *)*list);
 			}
-			if (node->next != NULL)
-			{
-				node = node->next;
-			}
+			node = node->next;
 
 		}
 
 		node = node->prev;
 		size--;
-		for (i = size - 1; i > start; i--)
+		for (i = size; i > start; i--)
 		{
 			if (node->n < node->prev->n)
 			{
-				sw(node->prev, node);
+				sw(list, node->prev, node);
 				node = node->next;
 				print_list((const listint_t *)*list);
 				con = 1;
 			}
-			if (node->prev != NULL)
-			{
-				node = node->prev;
-			}
+			node = node->prev;
 		}
 		start++;
+		node = node->next;
 	}
 }
 
