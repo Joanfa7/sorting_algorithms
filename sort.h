@@ -22,7 +22,6 @@ void print_array(const int *array, size_t size);
 
 void print_list(const listint_t *list);
 
-
 void bubble_sort(int *array, size_t size);
 
 void selection_sort(int *array, size_t size);
@@ -33,6 +32,10 @@ void swaping(listint_t **head, listint_t **left, listint_t *right);
 
 void quick_sort(int *array, size_t size);
 
+void swap(int *F_elem, int *Sec_elem);
 
+int partion(int *array, int low, int high, size_t size);
+
+void recursion(int *array, int small, int big, size_t size);
 
 #endif
