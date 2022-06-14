@@ -38,4 +38,6 @@ int partion(int *array, int low, int high, size_t size);
 
 void recursion(int *array, int small, int big, size_t size);
 
+void cocktail_sort_list(listint_t **list);
+
 #endif
