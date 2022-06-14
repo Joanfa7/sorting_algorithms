@@ -1,6 +1,16 @@
 #include "sort.h"
 #include <stdio.h>
 
+/**
+ * sw - switches nodes in a souble linked list
+ *
+ * @h: head of double linked list
+ * @first: first node to swap
+ * @sec: second node to swap
+ *
+ * Return: nothing
+ */
+
 void sw(listint_t **h, listint_t *first, listint_t *sec)
 {
 	if (first->prev != NULL)
@@ -33,7 +43,7 @@ void sw(listint_t **h, listint_t *first, listint_t *sec)
 	}
 }
 
-/*
+/**
  * cocktail_sort_list - sorts a list using cocktail shaker sort algorithm
  *
  * @list: list to be sorted
@@ -48,22 +58,12 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *hold = *list;
 
 	if (list == NULL)
-	{
 		return;
-	}
-
 	for (size = 0; node->next != NULL; size++)
-	{
 		node = node->next;
-	}
-
 	if (size < 2)
-	{
 		return;
-	}
-
 	node = hold;
-
 	while (con > 0)
 	{
 		con = -1;
@@ -76,9 +76,7 @@ void cocktail_sort_list(listint_t **list)
 				print_list((const listint_t *)*list);
 			}
 			node = node->next;
-
 		}
-
 		node = node->prev;
 		size--;
 		for (i = size; i > start; i--)
