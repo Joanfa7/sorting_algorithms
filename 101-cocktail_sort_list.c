@@ -54,16 +54,16 @@ void sw(listint_t **h, listint_t *first, listint_t *sec)
 void cocktail_sort_list(listint_t **list)
 {
 	int size, start = 0, i, con = 1;
-	listint_t *node = *list;
-	listint_t *hold = *list;
+	listint_t *node;
 
 	if (list == NULL)
 		return;
+	node = *list;
 	for (size = 0; node != NULL; size++)
 		node = node->next;
 	if (size < 2)
 		return;
-	node = hold;
+	node = *list;
 	while (con > 0)
 	{
 		con = -1;
